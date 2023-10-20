@@ -91,7 +91,7 @@ module Api
 
       # Checks if external authentication is enabled
       def external_authn_enabled?
-        ENV['OPENID_CONNECT_ISSUER'].present?
+        ENV['OPENID_CONNECT_ISSUER'].present? || ENV['SAML_ENTITY_ID'].present?
       end
     end
   end
