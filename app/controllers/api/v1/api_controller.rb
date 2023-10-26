@@ -91,7 +91,7 @@ module Api
 
       # Checks if external authentication is enabled
       def external_authn_enabled?
-        ENV['OPENID_CONNECT_ISSUER'].present?
+        ENV['OPENID_CONNECT_ISSUER'].present? || ENV['LDAP_SERVER'].present?
       end
     end
   end
