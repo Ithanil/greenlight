@@ -26,7 +26,6 @@ module Api
       def index
         render_data data: {
           OPENID_CONNECT: ENV['OPENID_CONNECT_ISSUER'].present?,
-          SAML: ENV['SAML_ENTITY_ID'].present? && ENV['OPENID_CONNECT_ISSUER'].blank?,
           EXTERNAL_AUTH: ENV['OPENID_CONNECT_ISSUER'].present? || ENV['SAML_ENTITY_ID'].present?,
           HCAPTCHA_KEY: ENV.fetch('HCAPTCHA_SITE_KEY', nil),
           VERSION_TAG: ENV.fetch('VERSION_TAG', ''),
